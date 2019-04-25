@@ -1,0 +1,17 @@
+.navbar.navbar-light.navbar-expand {
+  /*background:linear-gradient(270deg,#172a74,#21a9af);*/
+  background-color:rgba(255,255,255,0.5);
+}
+
+.register-photo {
+  background-color:transparent;
+}
+
+body {
+  background:linear-gradient(270deg,#172a74,#21a9af);
+}
+
+.form-container {
+}
+
+
