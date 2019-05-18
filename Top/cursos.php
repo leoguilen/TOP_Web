@@ -185,7 +185,7 @@
                             ?>
                             <div class="col-md-6">
                                 <div class="card" style="border: 1px solid #21a9af;margin-right:10px;margin-left:10px;margin-top:25px;">
-                                    <img class="card-img-top" src="<?php echo $imgCursoBusca; ?>" width="100%" height="150px" style="padding:15px;">
+                                    <img class="card-img-top" src="assets/dashboard/img/ImagemCurso/<?php echo $imgCursoBusca; ?>" width="100%" height="150px" style="padding:15px;">
                                     <div class="card-header content">
                                         <h4 class="card-title" style="margin-bottom:-20mm;margin-top:-2mm;font-size:17px;color:#008B8B;padding-left:10px;height:100px"><?php echo utf8_encode($nomeCursoBusca); ?></h4>
                                     </div>
@@ -218,7 +218,7 @@
                             ?> 
                                 <div class="col-md-6">
                                 <div class="card" style="border: 1px solid #21a9af;margin-right:10px;margin-left:10px;margin-top:25px;">
-                                    <img class="card-img-top" src="<?php echo $imgCurso; ?>" width="100%" height="150px"  style="padding:15px;">
+                                    <img class="card-img-top" src="assets/dashboard/img/ImagemCurso/<?php echo $imgCurso; ?>" width="100%" height="150px"  style="padding:15px;">
                                     <div class="card-header content">
                                         <h4 class="card-title" style="margin-bottom:-20mm;margin-top:-2mm;font-size:17px;color:#008B8B;padding-left:10px;height:100px"><?php echo utf8_encode($nomeCurso); ?></h4>
                                     </div>
@@ -265,7 +265,7 @@
                             ?>
                                 <div class="col-md-6">
                                     <div class="card" style="border: 1px solid #21a9af;margin-right:10px;margin-left:10px;margin-top:25px;">
-                                        <img class="card-img-top" src="<?php echo $imgCursoBuscaPG;?>" width="100%" height="150px"  style="padding:15px;">
+                                        <img class="card-img-top" src="assets/dashboard/img/ImagemCurso/<?php echo $imgCursoBuscaPG; ?>" width="100%" height="150px"  style="padding:15px;">
                                         <div class="card-header content">
                                             <h4 class="card-title" style="margin-bottom:-20mm;margin-top:-2mm;font-size:17px;color:#008B8B;padding-left:10px;height:100px"><?php echo utf8_encode($nomeCursoBuscaPG);?></h4>
                                         </div>
@@ -298,7 +298,7 @@
                             ?> 
                                 <div class="col-md-6">
                                     <div class="card" style="border: 1px solid #21a9af;margin-right:10px;margin-left:10px;margin-top:25px;">
-                                        <img class="card-img-top" src="<?php echo $imgCursoPG;?>" width="100%" height="150px"  style="padding:15px;">
+                                        <img class="card-img-top" src="assets/dashboard/img/ImagemCurso/<?php echo $imgCursoPG; ?>" width="100%" height="150px"  style="padding:15px;">
                                         <div class="card-header content">
                                             <h4 class="card-title" style="margin-bottom:-20mm;margin-top:-2mm;font-size:17px;color:#008B8B;padding-left:10px;height:100px"><?php echo utf8_encode($nomeCursoPG);?></h4>
                                         </div>

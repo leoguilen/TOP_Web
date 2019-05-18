@@ -233,33 +233,33 @@
                                                 <p><strong>Porcentagem de compatibilidade</strong></p>
                                             </div>   
                                             <div class="col-md-3">
-                                                <div class="numbers" style="margin-left:-10mm;">
+                                                <div class="numbers" style="margin-left:-15mm;">
                                                     <p>Exatas</p>
                                                     <?php
                                                         if(empty($percExatas)==false)
-                                                        echo "<p class='text-success' style='font-size: 30px'>".($percExatas*100)."%"."</p>";
+                                                        echo "<p class='text-success' style='font-size: 25px'>".($percExatas)."%"."</p>";
                                                         else
                                                         echo "<p class='text-success' style='font-size: 30px'>0%</p>";
                                                     ?>
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
-                                                <div class="numbers">
+                                                <div class="numbers" style="margin-left:-6mm;">
                                                     <p>Humanas</p>
                                                     <?php
                                                         if(empty($percExatas)==false)
-                                                        echo "<p class='text-success' style='font-size: 30px'>".($percHumanas*100)."%"."</p>";
+                                                        echo "<p class='text-success' style='font-size: 25px'>".($percHumanas)."%"."</p>";
                                                         else
                                                         echo "<p class='text-success' style='font-size: 30px'>0%</p>";
                                                     ?>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <div class="numbers">
+                                                <div class="numbers" style="margin-left:-4mm;">
                                                     <p>Biologicas</p>
                                                     <?php
                                                         if(empty($percExatas)==false)
-                                                        echo "<p class='text-success' style='font-size: 30px'>".($percBio*100)."%"."</p>";
+                                                        echo "<p class='text-success' style='font-size: 25px'>".($percBio)."%"."</p>";
                                                         else
                                                         echo "<p class='text-success' style='font-size: 30px'>0%</p>";
                                                     ?>
@@ -286,7 +286,7 @@
                                 <p class="sub-title text-center">Faça o teste em nosso app e venha ver os seus resultados com a gente. Seu futuro faz parte do nosso futuro</p>    
                                 <div class="content text-center">
                                     <img src="assets/dashboard/img/google-play-badge.png" width="250px" height="100px">
-                                    <a class="btn btn-primary btn-lg" href="https://play.google.com/store" target="_blank">Baixar Agora</a>
+                                    <a class="btn btn-primary btn-lg" href="https://drive.google.com/file/d/1k1DImYmRzhaR7BcWbraRtDQOyFDlUIZz/view?usp=sharing" target="_blank">Baixar Agora</a>
                                 </div>
                             </div>
                         </div>
@@ -303,7 +303,7 @@
                             <hr>
                         </div>
                         <div class="content">  
-                            <div class="card-body" style="background-image: url(C:/xampp/htdocs/Top/assets/dashboard/img/ImagemCurso/<?php echo $imagem;?>);background-position:center;background-size:cover;background-repeat:no-repeat;height:100mm;"></div>       
+                            <div class="card-body" style="background-image: url(assets/dashboard/img/ImagemCurso/<?php echo $imagem; ?>);background-position:center;background-size:cover;background-repeat:no-repeat;height:100mm;"></div>       
                         </div>                                                          
                     </div>
                 </div>
@@ -425,7 +425,7 @@
         var humanas = "<?php echo $percHumanas; ?>";
         var bio = "<?php echo $percBio; ?>";
 
-       demo.initChartist(exatas*100,bio*100,humanas*100);
+       demo.initChartist(exatas,bio,humanas);
 
        $.notify({
            icon: 'ti-gift',

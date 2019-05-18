@@ -16,7 +16,7 @@ require 'PHPMailer/PHPMailer/src/SMTP.php';
     
 $mail               = new PHPMailer();
 $body               = "<h2>Olá, vamos ajuda-lo a recuperar sua senha, ok?</h2><br><h5>Clique no link abaixo para mudar sua senha</h5>
-                        <br><a href='http://testetop.localhost:8080/formAlterarSenha.php?v@l1dAteNumb3r=ok$numValida'>Mudar Senha</a><p>Att<br>Equipe de suporte do top</p>";
+                        <br><a href='http://192.168.0.5:8080/Top/formAlterarSenha.php?v@l1dAteNumb3r=ok$numValida'>Mudar Senha</a><p>Att<br>Equipe de suporte do top</p>";
 $mail->IsSMTP();                                        // telling the class to use SMTP
 $mail->SMTPDebug    = 1;                                // enables SMTP debug information (for testing)
 $mail->SMTPAuth     = true;                             // enable SMTP authentication
