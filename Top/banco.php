@@ -7,7 +7,7 @@
         public function Conectar()
         {
             try{
-                $serverName = "(local)\SQLEXPRESS";
+                $serverName = "(local)";
                 $connectionInfo = array("Database" => "bd_top");
                 //$connectionInfo = array("UID" => "lguilen@bdtop", "pwd" => "Senha2017#", "Database" => "bd_top", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
                 //$serverName = "bdtop.database.windows.net,1433";

@@ -1,3 +1,20 @@
+<?php
+    include_once('banco.php');  
+
+    $bd = new MyBanco();
+
+    $strcn = $bd->Conectar();
+
+    $sql = "SELECT TOP(6) * FROM tb_avaliacao av
+            JOIN tb_usuario us ON av.user_in_id = us.user_in_id
+            JOIN tb_teste t ON av.test_in_id = t.teste_in_id
+            JOIN v_relatorioResultado r ON t.teste_in_id = r.id_teste
+            WHERE t.teste_bool_novoTeste = 1
+            ORDER BY t.teste_dt_final DESC,av.ava_in_ratings DESC";
+    $result = sqlsrv_query($strcn,$sql);
+    
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,8 +32,12 @@
   <link href="assets/index/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
   <link href="assets/index/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
   <link href="assets/index/css/creative.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="assets/avalia/css/styles.css">
+  <link rel="stylesheet" href="assets/avalia/css/Testimonials.css">
 
 </head>
 
@@ -39,6 +60,7 @@
     </div>
   </nav>
 
+<!-- Header --> 
   <header class="masthead text-center text-white d-flex">
     <div class="container my-auto">
       <div class="row">
@@ -56,6 +78,7 @@
     </div>
   </header>
 
+<!-- O que somos --> 
   <section id="about" style="background-color: white;border-bottom: 5px dotted #21a9af">
     <div class="container">
       <div class="row">
@@ -70,6 +93,7 @@
     </div>
   </section>
 
+<!-- Informações do TOP -->  
   <section id="services">
     <div class="container">
       <div class="row">
@@ -113,6 +137,61 @@
     </div>
   </section>
 
+<!-- Avaliação --> 
+  <section class="testimonials-clean">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Avaliações de usuários</h2>
+                <hr class="light my-4">
+                <p class="text-center">Avaliações de pessoas que fizeram o teste e gostaram de seu resultado.</p>
+            </div>
+            <div class="row people">
+            <?php
+                while($row = sqlsrv_fetch_array($result,SQLSRV_FETCH_ASSOC)){
+                  $nome = $row["user_st_nome"];
+                  $username = $row["user_st_username"];
+                  $img = $row["user_img_avatar"];
+                  $curso = $row["nome_curso"];
+                  $ratings = $row["ava_in_ratings"];
+                  $comentario = $row["ava_st_comentario"];
+            ?>
+                <div class="col-md-6 col-lg-4 item">
+                    <div class="box">
+                        <p class="description"><?php echo utf8_encode($comentario); ?></p>
+                        <br><br>
+                        <?php
+                            $i = 0;
+                            while($i < $ratings)
+                            {
+                        ?>
+                        <i class="fa fa-star fa-lg" style="color:Gold"></i>
+                        <?php
+                             $i+=1;  
+                            } 
+                        ?>
+                    </div>
+                    <?php
+                        if($img == null)
+                        {
+                    ?>
+                        <div class="author"><img class="rounded-circle" src="assets/index/img/defaultAvatar.png"> 
+                    <?php        
+                        } else {
+                    ?>
+                    <div class="author"><img class="rounded-circle" src="assets/dashboard/img/Fotos/<?php echo $img; ?>">
+                    <?php } ?>
+                        <h5 class="name"><?php echo utf8_encode($nome); ?></h5>
+                        <p class="title">Resultado: <?php echo utf8_encode($curso); ?></p>
+                    </div>
+                </div>
+                <?php 
+                    }
+                ?>
+            </div>
+        </div>
+  </section>
+
+<!-- Nosso APP --> 
   <section class="bg-dark text-white">
     <div class="container text-center">
       <h2 class="mb-4 text-uppercase">Em breve nosso app estará disponivel!</h2>
@@ -122,6 +201,7 @@
     </div>
   </section>
 
+<!-- Footer --> 
   <section id="contact">
     <div class="container">
       <div class="row">
